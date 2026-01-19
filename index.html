@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tridip Panja | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--primary), #1e40af);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: #334155;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-box i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      margin: 10px;
+      display: inline-block;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+
+    .contact a:hover {
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 50px 7%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="home">
+    <h1>Hi, I'm Tridip Panja</h1>
+    <p>AI / ML Enthusiast | Data Science Learner</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="about">
+      I am Tridip Panja 3rd Year Undergraduate student pursuing B.Tech in information Technology from Calcutta Institute of Engineering and Management.
+      I am a passionate AI & Machine Learning developer with hands-on experience in Python,
+      Machine Learning, Natural Language Processing with end-to-end ML projects. I love building practical
+      AI applications and deploying them as real-world solutions.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="skill-box"><i class="fab fa-python"></i><h3>Python</h3></div>
+      <div class="skill-box"><i class="fas fa-brain"></i><h3>Machine Learning</h3></div>
+      <div class="skill-box"><i class="fas fa-eye"></i><h3>C</h3></div>
+      <div class="skill-box"><i class="fab fa-react"></i><h3>C++</h3></div>
+      <div class="skill-box"><i class="fab fa-aws"></i><h3>Git</h3></div>
+      <div class="skill-box"><i class="fas fa-database"></i><h3>SQL & MongoDB</h3></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Sentiment Analysis APP</h3>
+        <p>It recognizes the sentiment of a context provided by the user.</p>
+        <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Python Chatbot</h3>
+        <p>Real-time chatbot built with langgraph and streamlit.</p>
+        <a href="https://github.com/Tridip-2004/Python_Chatbot">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Drug Classification Using DNA Sequence</h3>
+        <p>This is my internship Project at JISIASR, 
+          Where i Applied ML techniques on biological sequence data and Worked with DNA embeddings and classification models.</p>
+        <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence">View Project</a>
+      </div>
+       <div class="project-card">
+        <h3>Dogs Breed Classifier</h3>
+        <p>This model can predict Dog's Breed on 157 Classes .</p>
+        <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-">View Project</a>
+      </div>
+      </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact">
+      <a href="mailto:tridippanja9@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/Tridip-2004" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/tridip-panja" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Tridip Panja. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
