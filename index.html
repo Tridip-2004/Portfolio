@@ -30,7 +30,7 @@
     :root {
       --primary: #eb5d25;
       --dark: #010a29;
-      --light: #57dbd2d3;
+      --light: hsl(180, 56%, 48%);
       --gray: #a8a6a6;
     }
 
@@ -210,10 +210,46 @@
   margin-bottom: 20px;
   padding: 15px;
   border-left: 4px solid #00ff59;
-  background-color: #f6f2f2;
+  background-color: #f4f7f4;
   }
 }
-  </style>
+#tools {
+    padding: 60px 20px;
+    background-color: hsl(180, 56%, 48%);
+    text-align: center;
+}
+
+#tools h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #080404;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tool {
+    padding: 12px 20px;
+    background-color: hsl(62, 71%, 57%);
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tool:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+</style>
 </head>
 <body>
 
@@ -269,10 +305,29 @@
       <div class="skill-box"><i class="fas fa-brain"></i><h3>Machine Learning</h3></div>
       <div class="skill-box"><i class="fas fa-eye"></i><h3>C</h3></div>
       <div class="skill-box"><i class="fab fa-react"></i><h3>C++</h3></div>
-      <div class="skill-box"><i class="fab fa-aws"></i><h3>Git</h3></div>
       <div class="skill-box"><i class="fas fa-database"></i><h3>SQL & MongoDB</h3></div>
     </div>
   </section>
+<section id="tools">
+    <h2>Tools & Technologies</h2>
+
+    <div class="tools-container">
+      
+        <div class="tool">Pandas</div>
+        <div class="tool">NumPy</div>
+        <div class="tool">Scikit-Learn</div>
+        <div class="tool">TensorFlow</div>
+        <div class="tool">Keras</div>
+        <div class="tool">Matplotlib</div>
+        <div class="tool">Seaborn</div>
+        <div class="tool">Pytorch</div>
+        <div class="tool">Jupyter Notebook</div>
+        <div class="tool">Google Colab</div>
+        <div class="tool">VS Code</div>
+        <div class="tool">MySQL</div>
+        <div class="tool">Git & GitHub</div>
+    </div>
+</section>
 <section id="certificates">
 <h2 class="section-title">My Certificates</h2>
   <div class="certificate-card">
