@@ -68,7 +68,7 @@
     nav {
       position: sticky;
       top: 0;
-      background: hsl(220, 88%, 3%);
+      background: hsl(222, 47%, 11%);
       display: flex;
       justify-content: center;
       gap: 30px;
@@ -122,11 +122,11 @@
     }
 
     .skill-box {
-      background: rgb(45, 19, 211);
+      background: hsl(222, 47%, 11%);
       padding: 25px;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 25px hsl(225, 33%, 98%);
       transition: transform 0.3s;
     }
 
@@ -147,10 +147,10 @@
     }
 
     .project-card {
-      background: rgb(45, 19, 211);
+      background: rgb(20, 20, 183);
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 25px hsl(222, 47%, 11%);
       transition: transform 0.3s;
     }
 
@@ -185,11 +185,68 @@
 
     footer {
       background: var(--dark);
-      color: rgb(10, 5, 5);
+      color: hsl(222, 47%, 11%);
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
     }
+
+    #contact {
+  padding: 80px 20px;
+  background-color: #0f172a;
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  font-size: 1rem;
+  color: #cbd5f5;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0ea5e9;
+}
 
     @media (max-width: 768px) {
       header h1 {
@@ -210,12 +267,12 @@
   margin-bottom: 20px;
   padding: 15px;
   border-left: 4px solid #00ff59;
-  background-color: rgb(45, 19, 211);
+  background-color: rgb(11, 11, 14);
   }
 }
 #tools {
     padding: 60px 20px;
-    background-color: hsl(30, 50%, 2%);
+    background-color: hsl(222, 47%, 11%);
     text-align: center;
 }
 
@@ -239,7 +296,7 @@
     font-size: 16px;
     font-weight: 500;
     color: #f3eeee;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px hsl(240, 5%, 96%);
     transition: 0.3s;
     cursor: pointer;
 }
@@ -374,9 +431,16 @@
   </section>
 
   <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <div class="contact">
-      <a href="mailto:tridippanja9@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p>If you’d like to work together or have any questions, feel free to send me a message.</p>
+
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
       <a href="https://github.com/Tridip-2004" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/tridip-panja-ba03662b2" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
