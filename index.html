@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <meta name="theme-color" content="#080c10"/>
+  <title>Tridip Panja — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">TP<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#home"         class="nav-link">Home</a>
+        <a href="#about"        class="nav-link">About</a>
+        <a href="#education"    class="nav-link">Education</a>
+        <a href="#skills"       class="nav-link">Skills</a>
+        <a href="#projects"     class="nav-link">Projects</a>
+        <a href="#certificates" class="nav-link">Certs</a>
+        <a href="#contact"      class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HEADER ───────────────────────────────────────────── -->
   <header id="home">
     <!-- Profile Image -->
 <div class="profile-wrapper">
@@ -11,165 +40,404 @@
     <img src="profile.jpg" alt="My Profile Photo" class="profile-img">
   </div>
 </div>
-    <h1>Hi, I'm Tridip Panja</h1>
-    <p>AI / ML Enthusiast | Data Science Learner</p>
+    <div class="header-content">
+      <div class="header-badge"><span class="dot"></span> Available for opportunities</div>
+      <h1>Tridip<br><span>Panja</span></h1>
+      <p class="header-sub">AI / ML Enthusiast &nbsp;·&nbsp; Data Science Learner</p>
+      <div class="header-socials">
+        <a href="https://github.com/Tridip-2004" target="_blank" rel="noopener" class="social-btn">
+          <i class="fab fa-github"></i><span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/tridip-panja-ba03662b2" target="_blank" rel="noopener" class="social-btn social-btn--linkedin">
+          <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+        </a>
+      </div>
+      <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+    </div>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- ── ABOUT ─────────────────────────────────────────────── -->
   <section id="about">
     <h2 class="section-title">About Me</h2>
-    <p class="about">
-      I am Tridip Panja 3rd Year Undergraduate student pursuing B.Tech in information Technology from Calcutta Institute of Engineering and Management.
-      I am a passionate AI & Machine Learning developer with hands-on experience in Python,
-      Machine Learning, Natural Language Processing with end-to-end ML projects. I love building practical
-      AI applications and deploying them as real-world solutions.
-    </p>
+    <div class="about-card">
+      <p>I am Tridip Panja — a 3rd Year Undergraduate student pursuing B.Tech in Information Technology
+      from Calcutta Institute of Engineering and Management. I am a passionate AI &amp; Machine Learning
+      developer with hands-on experience in Python, Machine Learning, and Natural Language Processing,
+      with end-to-end ML projects. I love building practical AI applications and deploying them as
+      real-world solutions.</p>
+    </div>
   </section>
+
+  <!-- ── EDUCATION ─────────────────────────────────────────── -->
   <section id="education">
     <h2 class="section-title">Education</h2>
-    <div class="edu-item">
-    <h3>Bachelor of Technology (B.Tech)</h3>
-    <p><strong>College:</strong> Calcutta Institute Of Engineering & Management</p>
-    <p><strong>University:</strong> Maulana Abul Kalam Azad University of Technology</p>
-    <p><strong>Year:</strong> 2023 – 2027</p>
-  </div>
-  <div class="edu-item">
-    <h3>Higher Secondary (12th)</h3>
-    <p><strong>School:</strong>Uluberia High School</p>
-    <p><strong>Board:</strong> WBCHSE </p>
-    <p><strong>Year:</strong> 2022</p>
-    <p><strong>Percentage:</strong> 80%</p>
-  </div>
+    <div class="timeline">
 
-  <div class="edu-item">
-    <h3>Secondary (10th)</h3>
-    <p><strong>School:</strong>Baniban Jadurberia Vidyapith</p>
-    <p><strong>Board:</strong> WBBSE</p>
-    <p><strong>Year:</strong> 2020</p>
-    <p><strong>Percentage:</strong> 85.4%</p>
-  </div>
-</section>
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div class="edu-body">
+          <h3>Bachelor of Technology (B.Tech)</h3>
+          <div class="edu-meta">
+            <span><i class="fas fa-university"></i> Calcutta Institute Of Engineering &amp; Management</span>
+            <span><i class="fas fa-scroll"></i> MAKAUT</span>
+            <span><i class="fas fa-calendar-alt"></i> 2023 – 2027</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div class="edu-body">
+          <h3>Higher Secondary (12th)</h3>
+          <div class="edu-meta">
+            <span><i class="fas fa-school"></i> Uluberia High School</span>
+            <span><i class="fas fa-clipboard-check"></i>WBCHSE· 2022</span>
+            <span class="edu-score">80%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div class="edu-body">
+          <h3>Secondary (10th)</h3>
+          <div class="edu-meta">
+            <span><i class="fas fa-school"></i> Baniban Jadurberia Vidyapith</span>
+            <span><i class="fas fa-clipboard-check"></i> WBBSE· 2020</span>
+            <span class="edu-score">85.4%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SKILLS ────────────────────────────────────────────── -->
   <section id="skills">
     <h2 class="section-title">Skills</h2>
-    <div class="skills">
+    <div class="skills-grid">
       <div class="skill-box"><i class="fab fa-python"></i><h3>Python</h3></div>
       <div class="skill-box"><i class="fas fa-brain"></i><h3>Machine Learning</h3></div>
-      <div class="skill-box"><i class="fas fa-eye"></i><h3>C</h3></div>
-      <div class="skill-box"><i class="fab fa-react"></i><h3>C++</h3></div>
-      <div class="skill-box"><i class="fas fa-database"></i><h3>SQL & MongoDB</h3></div>
+      <div class="skill-box"><i class="fas fa-code"></i><h3>C</h3></div>
+      <div class="skill-box"><i class="fas fa-layer-group"></i><h3>C++</h3></div>
+      <div class="skill-box"><i class="fas fa-database"></i><h3>SQL &amp; MongoDB</h3></div>
     </div>
   </section>
-<section id="tools">
-    <h2>Tools & Technologies</h2>
 
+  <!-- ── TOOLS ─────────────────────────────────────────────── -->
+  <section id="tools">
+    <h2 class="section-title">Tools &amp; Technologies</h2>
     <div class="tools-container">
-      
-        <div class="tool">Pandas</div>
-        <div class="tool">NumPy</div>
-        <div class="tool">Scikit-Learn</div>
-        <div class="tool">TensorFlow</div>
-        <div class="tool">Keras</div>
-        <div class="tool">Matplotlib</div>
-        <div class="tool">Seaborn</div>
-        <div class="tool">Pytorch</div>
-        <div class="tool">Jupyter Notebook</div>
-        <div class="tool">Google Colab</div>
-        <div class="tool">VS Code</div>
-        <div class="tool">MySQL</div>
-        <div class="tool">Git & GitHub</div>
+      <span class="tool">Pandas</span>
+      <span class="tool">NumPy</span>
+      <span class="tool">Scikit-Learn</span>
+      <span class="tool">TensorFlow</span>
+      <span class="tool">Keras</span>
+      <span class="tool">Matplotlib</span>
+      <span class="tool">Seaborn</span>
+      <span class="tool">PyTorch</span>
+      <span class="tool">Jupyter Notebook</span>
+      <span class="tool">Google Colab</span>
+      <span class="tool">VS Code</span>
+      <span class="tool">MySQL</span>
+      <span class="tool">Git &amp; GitHub</span>
     </div>
-</section>
-<section id="certificates">
-<h2 class="section-title">My Certificates</h2>
-  <div class="certificate-card">
-    <h3>Internship Certificate</h3>
-    <p>Issued by JISIASR</p>
-    <a href="certificates/internship_certificate.pdf" 
-       target="_blank" 
-       class="view-btn">
-       View Certificate
-    </a>
-  <div class="cert-item">
-    <h3>Nirmiti Participation Certificate 2024</h3>
-    <a href="certificates/nirmiti.pdf" target="_blank">
-      View Certificate
-    </a>
-  <div class="cert-item">
-    <h3>Gen AI Certificate Issued By BCGX</h3>
-    <a href="certificates/genaicertificate.pdf" target="_blank">
-      View Certificate
-    </a>
-  <div class="cert-item">
-    <h3>Data Science Certificate Issued By BCGX</h3>
-    <a href="certificates/datasciencecertificate.pdf" target="_blank">
-      View Certificate
-    </a>
-  </div>
-</section>
-</div>
+  </section>
+
+  <!-- ── CERTIFICATES ──────────────────────────────────────── -->
+  <section id="certificates">
+    <h2 class="section-title">Certificates</h2>
+    <div class="cert-grid">
+
+      <div class="certificate-card">
+        <div class="cert-icon"><i class="fas fa-award"></i></div>
+        <div class="cert-info">
+          <h3>Internship Certificate</h3>
+          <p>Issued by JISIASR</p>
+        </div>
+        <a href="certificates/internship_certificate.pdf" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+
+      <div class="certificate-card">
+        <div class="cert-icon"><i class="fas fa-medal"></i></div>
+        <div class="cert-info">
+          <h3>Nirmiti Participation 2024</h3>
+          <p>Participation Certificate</p>
+        </div>
+        <a href="certificates/nirmiti.pdf" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+
+      <div class="certificate-card">
+        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+        <div class="cert-info">
+          <h3>Gen AI Certificate</h3>
+          <p>Issued by BCGX</p>
+        </div>
+        <a href="certificates/genaicertificate.pdf" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+
+      <div class="certificate-card">
+        <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="cert-info">
+          <h3>Data Science Certificate</h3>
+          <p>Issued by BCGX</p>
+        </div>
+        <a href="certificates/datasciencecertificate.pdf" target="_blank" class="cert-link"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PROJECTS CAROUSEL ─────────────────────────────────── -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Sentiment Analysis APP</h3>
-        <p>It recognizes the sentiment of a context provided by the user.</p>
-        <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App">View Project</a>
+
+    <div class="projects-carousel-wrap" id="carouselWrap">
+      <!-- The track holds cards × 2 for seamless infinite loop -->
+      <div class="projects-track" id="projectsTrack">
+
+        <!-- Set 1 -->
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Sentiment Analysis App</h3>
+          <p>Recognizes the sentiment of context provided by the user using NLP techniques.</p>
+          <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Python_Chatbot" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Python Chatbot</h3>
+          <p>Real-time chatbot built with LangGraph and Streamlit.</p>
+          <a href="https://github.com/Tridip-2004/Python_Chatbot" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Drug Classification via DNA</h3>
+          <p>Internship project at JISIASR — ML on biological sequence data with DNA embeddings.</p>
+          <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Dog Breed Classifier</h3>
+          <p>Predicts a dog's breed across 157 classes — deployed on Render.</p>
+          <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <!-- Set 2 — exact duplicate for seamless infinite loop -->
+        <div class="project-card" aria-hidden="true">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Sentiment Analysis App</h3>
+          <p>Recognizes the sentiment of context provided by the user using NLP techniques.</p>
+          <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card" aria-hidden="true">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Python_Chatbot" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Python Chatbot</h3>
+          <p>Real-time chatbot built with LangGraph and Streamlit.</p>
+          <a href="https://github.com/Tridip-2004/Python_Chatbot" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card" aria-hidden="true">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Drug Classification via DNA</h3>
+          <p>Internship project at JISIASR — ML on biological sequence data with DNA embeddings.</p>
+          <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card" aria-hidden="true">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Dog Breed Classifier</h3>
+          <p>Predicts a dog's breed across 157 classes — deployed on Render.</p>
+          <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
+
+      </div><!-- /track -->
+
+      <!-- Dot indicators -->
+      <div class="carousel-dots" id="carouselDots">
+        <div class="carousel-dot active"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
       </div>
-      <div class="project-card">
-        <h3>Python Chatbot</h3>
-        <p>Real-time chatbot built with langgraph and streamlit.</p>
-        <a href="https://github.com/Tridip-2004/Python_Chatbot">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Drug Classification Using DNA Sequence</h3>
-        <p>This is my internship Project at JISIASR, 
-          Where i Applied ML techniques on biological sequence data and Worked with DNA embeddings and classification models.</p>
-        <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence">View Project</a>
-      </div>
-       <div class="project-card">
-        <h3>Dogs Breed Classifier</h3>
-        <p>This model can predict Dog's Breed on 157 Classes .</p>
-        <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-">View Project</a>
-      </div>
-      </div>
+
+    </div><!-- /wrap -->
   </section>
 
+  <!-- ── CONTACT ───────────────────────────────────────────── -->
   <section id="contact">
-  <div class="contact-container">
-    <h2>Contact Me</h2>
-    <p>If you’d like to work together or have any questions, feel free to send me a message.</p>
+    <div class="contact-container">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="contact-sub">If you'd like to work together or have questions, send me a message.</p>
 
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-      <a href="https://github.com/Tridip-2004" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/tridip-panja-ba03662b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
+        </div>
+        <button type="submit"><span>Send Message</span> <i class="fas fa-paper-plane"></i></button>
+      </form>
+
+      <div class="social-bar">
+        <a href="https://github.com/Tridip-2004" target="_blank" rel="noopener" class="social-icon-link">
+          <i class="fab fa-github"></i><span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/tridip-panja-ba03662b2" target="_blank" rel="noopener" class="social-icon-link social-icon-link--linkedin">
+          <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
   <footer>
-    <p>© 2026 Tridip Panja. All Rights Reserved.</p>
+    <p>© 2026 <strong>Tridip Panja</strong>. All Rights Reserved.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/Tridip-2004" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/tridip-panja-ba03662b2" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
   </footer>
 
   <script>
-    // Smooth scrolling
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!open));
+    hamburger.classList.toggle('open', !open);
+    navLinks.classList.toggle('open', !open);
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
     });
+  });
+
+  /* ── Active nav ── */
+  const allSections = document.querySelectorAll('section, header');
+  const allNavLinks = document.querySelectorAll('.nav-link');
+
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting)
+        allNavLinks.forEach(l =>
+          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)
+        );
+    });
+  }, { threshold: 0.35 }).observe && allSections.forEach(s =>
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting)
+          allNavLinks.forEach(l =>
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)
+          );
+      });
+    }, { threshold: 0.35 }).observe(s)
+  );
+
+  /* ── Navbar shadow ── */
+  window.addEventListener('scroll', () =>
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10)
+  );
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  /* ══════════════════════════════════════════════════════
+     CAROUSEL — dot tracking + CSS animation sync
+     ══════════════════════════════════════════════════════ */
+  (function() {
+    const track = document.getElementById('projectsTrack');
+    const dots  = document.querySelectorAll('.carousel-dot');
+    if (!track || !dots.length) return;
+
+    const CARD_COUNT = 4; // real cards (not duplicates)
+    let currentDot = 0;
+
+    // Update active dot every (animation duration / card count) seconds
+    // animation is 20s for full loop (8 cards × 2 sets)
+    const intervalMs = (20000 / CARD_COUNT); // ~5s per card
+
+    function updateDot() {
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentDot));
+      currentDot = (currentDot + 1) % CARD_COUNT;
+    }
+
+    updateDot();
+    const dotTimer = setInterval(updateDot, intervalMs);
+
+    // Pause animation & dots when tab hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        track.style.animationPlayState = 'paused';
+        clearInterval(dotTimer);
+      } else {
+        track.style.animationPlayState = 'running';
+      }
+    });
+
+    // Touch swipe support — pause/resume
+    let touchStartX = 0;
+    const wrap = document.getElementById('carouselWrap');
+
+    wrap.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      track.style.animationPlayState = 'paused';
+    }, { passive: true });
+
+    wrap.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      // Resume after a short delay
+      setTimeout(() => { track.style.animationPlayState = 'running'; }, 800);
+    }, { passive: true });
+  })();
   </script>
 
 </body>
