@@ -80,44 +80,6 @@ body {
   background-size: 36px 36px;
 }
 
-/* Profile Image Section */
-.profile-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-.profile-ring {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  padding: 6px;
-  background: linear-gradient(135deg, #38bdf8, #6366f1, #ec4899);
-  box-shadow: 0 0 25px rgba(99, 102, 241, 0.8);
-  animation: pulseGlow 3s infinite ease-in-out;
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #0f172a;
-}
-
-/* Glow Animation */
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(56, 189, 248, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
-  }
-}
-
 img { max-width:100%; display:block; }
 ::selection { background: var(--cyan); color: var(--bg); }
 ::-webkit-scrollbar { width:4px; }
@@ -264,6 +226,54 @@ header::after {
 }
 
 .header-content { position:relative; z-index:1; }
+
+/* Profile picture */
+.profile-pic-wrap {
+  position: relative;
+  width: clamp(100px, 28vw, 140px);
+  height: clamp(100px, 28vw, 140px);
+  margin: 0 auto 28px;
+  animation: fadeUp .7s var(--ease) both;
+}
+
+/* Spinning cyan ring */
+.profile-pic-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(var(--cyan), var(--green), var(--cyan-dim), var(--cyan));
+  animation: spin-ring 4s linear infinite;
+  z-index: 0;
+}
+
+/* Inner white gap between ring and image */
+.profile-pic-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: var(--surface);
+  z-index: 1;
+}
+
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.profile-pic {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  /* Subtle glow behind the image */
+  box-shadow: 0 0 30px rgba(0,212,255,.25);
+}
 
 .header-badge {
   display: inline-flex;
@@ -733,92 +743,128 @@ section:nth-child(even) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   PROJECTS — ONE-BY-ONE SLIDESHOW
+   PROJECTS — HORIZONTAL SCROLL (side by side)
    ═══════════════════════════════════════════════════════════ */
 #projects { overflow: hidden; }
 
-.slideshow-wrap {
-  max-width: 640px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* "1 / 4" counter */
-.slide-counter {
+/* Swipe hint label */
+.projects-scroll-hint {
   text-align: center;
   font-family: var(--mono);
   font-size: var(--fs-label);
-  color: var(--muted);
-  letter-spacing: .12em;
+  color: var(--text-dim);
+  letter-spacing: .1em;
   margin-bottom: 20px;
-}
-
-.slide-counter span { color: var(--cyan); font-weight: 700; }
-
-/* Clipping window — only one card wide */
-.slideshow-viewport {
-  overflow: hidden;
-  border-radius: var(--r-md);
-}
-
-/* Sliding track — flex row, translateX moves it */
-.slideshow-track {
   display: flex;
-  transition: transform .5s cubic-bezier(.4,0,.2,1);
-  will-change: transform;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  animation: bob 2s ease-in-out infinite;
 }
 
-/* Each individual card */
+.projects-scroll-hint i { color: var(--cyan); }
+
+/* Outer scroll container */
+.projects-scroll-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;          /* Firefox — hide scrollbar */
+  padding-bottom: 16px;
+  /* Extend slightly past section padding so first card isn't flush */
+  margin: 0 calc(-1 * var(--sec-h));
+  padding-left: var(--sec-h);
+  padding-right: var(--sec-h);
+  cursor: grab;
+}
+
+.projects-scroll-wrap:active { cursor: grabbing; }
+
+/* Hide webkit scrollbar */
+.projects-scroll-wrap::-webkit-scrollbar { display: none; }
+
+/* Inner flex track */
+.projects-scroll-track {
+  display: flex;
+  gap: clamp(14px, 3vw, 22px);
+  width: max-content;          /* lets track be wider than viewport */
+}
+
+/* Individual project card */
 .project-card {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  padding: clamp(22px, 4vw, 36px) clamp(20px, 4vw, 32px);
+  padding: clamp(24px, 4vw, 34px) clamp(20px, 4vw, 28px);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   position: relative;
   overflow: hidden;
-  /* exactly one card wide */
-  flex: 0 0 100%;
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 220px;
+  flex-shrink: 0;
+  /* Card width: peek at next card on mobile */
+  width: clamp(260px, 78vw, 320px);
+  scroll-snap-align: start;
+  transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease),
+              transform var(--t) var(--ease);
 }
 
+/* Gradient top accent on hover */
 .project-card::before {
-  content:'';
-  position:absolute;
-  top:0; left:0; right:0;
-  height:2px;
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
   background: linear-gradient(90deg, var(--cyan), var(--green));
-  opacity:0;
+  opacity: 0;
   transition: opacity var(--t) var(--ease);
 }
 
-.project-card:hover::before { opacity:1; }
+.project-card:hover {
+  border-color: rgba(0,212,255,.3);
+  box-shadow: var(--glow);
+  transform: translateY(-5px);
+}
 
+.project-card:hover::before { opacity: 1; }
+
+/* Top row: folder icon + github link */
 .project-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .project-icon {
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
   color: var(--cyan);
 }
 
+/* Large faded card number watermark */
+.project-num {
+  font-family: var(--mono);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  margin: -4px 0;
+  pointer-events: none;
+  transition: color var(--t);
+}
+
+.project-card:hover .project-num { color: var(--border-lit); }
+
 .project-gh {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:38px; height:38px;
-  border:1px solid var(--border);
-  border-radius:8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   color: var(--muted);
-  text-decoration:none;
-  font-size:1.05rem;
+  text-decoration: none;
+  font-size: 1.05rem;
   transition: color var(--t), border-color var(--t), background var(--t);
 }
 
@@ -855,64 +901,28 @@ section:nth-child(even) {
   text-transform: uppercase;
   width: fit-content;
   min-height: 36px;
+  margin-top: 4px;
   transition: gap var(--t) var(--ease);
 }
 
 .project-link:hover { gap: 10px; }
 
-/* Prev / Next + dots row */
-.slide-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 24px;
+/* Scroll progress bar below cards */
+.scroll-progress-bar {
+  max-width: 340px;
+  margin: 20px auto 0;
+  height: 3px;
+  background: var(--border);
+  border-radius: var(--r-pill);
+  overflow: hidden;
 }
 
-.slide-btn {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border-lit);
-  background: var(--panel);
-  color: var(--cyan);
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background var(--t) var(--ease), border-color var(--t) var(--ease),
-              transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
-}
-
-.slide-btn:hover {
-  background: var(--cyan);
-  border-color: var(--cyan);
-  color: var(--bg);
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(0,212,255,.3);
-}
-
-/* Dot indicators */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.carousel-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--border-lit);
-  cursor: pointer;
-  transition: background var(--t), transform var(--t), width var(--t);
-}
-
-.carousel-dot.active {
-  background: var(--cyan);
-  transform: scale(1.4);
-  box-shadow: 0 0 8px rgba(0,212,255,.5);
+.scroll-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan-dim), var(--cyan));
+  border-radius: var(--r-pill);
+  transition: width .1s linear;
 }
 
 /* ─── CONTACT ─────────────────────────────────────────────── */
@@ -1216,10 +1226,11 @@ footer p::before { content:'> '; color: var(--cyan); }
 @media (min-width: 769px) and (max-width: 1024px) {
   .skills-grid  { grid-template-columns: repeat(3, 1fr); }
   .cert-grid    { grid-template-columns: repeat(2, 1fr); }
-  .slideshow-wrap { max-width: 600px; }
+  .project-card { width: clamp(280px, 44vw, 340px); }
 }
 
 /* ── Desktop ≥ 1025px ── */
 @media (min-width: 1025px) {
-  .slideshow-wrap { max-width: 700px; }
+  .project-card { width: clamp(300px, 28vw, 360px); }
+  .projects-scroll-hint { display: none; } /* obvious on desktop */
 }

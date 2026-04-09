@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- ── NAV ──────────────────────────────────────────────── -->
+
+  <!-- ── NAV ──────────────────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">TP<span>.</span></a>
@@ -30,13 +31,16 @@
       </div>
     </div>
   </nav>
-    
-<!-- ── HEADER ───────────────────────────────────────────── -->
+
+  <!-- ── HEADER ───────────────────────────────────────────── -->
   <header id="home">
     <div class="header-content">
+      <div class="profile-pic-wrap">
+        <img src="profile.jpg" alt="Tridip Panja" class="profile-pic" />
+      </div>
       <div class="header-badge"><span class="dot"></span> Available for opportunities</div>
       <h1>Tridip<br><span>Panja</span></h1>
-      <p class="header-sub"> Data Scientist &nbsp;·&nbsp; Data Analyst </p>
+      <p class="header-sub">Data Scientist &nbsp;·&nbsp; Machine Learning Enthusiast</p>
       <div class="header-socials">
         <a href="https://github.com/Tridip-2004" target="_blank" rel="noopener" class="social-btn">
           <i class="fab fa-github"></i><span>GitHub</span>
@@ -48,13 +52,8 @@
       <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
     </div>
   </header>
-  <!-- Profile Image -->
-<div class="profile-wrapper">
-  <div class="profile-ring">
-    <img src="profile.jpg" alt="My Profile Photo" class="profile-img">
-  </div>
-</div>
-<!-- ── ABOUT ─────────────────────────────────────────────── -->
+
+  <!-- ── ABOUT ─────────────────────────────────────────────── -->
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="about-card">
@@ -186,20 +185,23 @@
     </div>
   </section>
 
-  <!-- ── PROJECTS CAROUSEL ─────────────────────────────────── -->
+  <!-- ── PROJECTS HORIZONTAL SCROLL ───────────────────────── -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
 
-    <div class="projects-carousel-wrap" id="carouselWrap">
-      <!-- The track holds cards × 2 for seamless infinite loop -->
-      <div class="projects-track" id="projectsTrack">
+    <div class="projects-scroll-hint">
+      <i class="fas fa-hand-point-right"></i> Swipe to explore
+    </div>
 
-        <!-- Set 1 -->
+    <div class="projects-scroll-wrap">
+      <div class="projects-scroll-track">
+
         <div class="project-card">
           <div class="project-top">
             <i class="fas fa-folder-open project-icon"></i>
             <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
           </div>
+          <div class="project-num">01</div>
           <h3>Sentiment Analysis App</h3>
           <p>Recognizes the sentiment of context provided by the user using NLP techniques.</p>
           <a href="https://github.com/Tridip-2004/Sentiment-Analysis-App" target="_blank" rel="noopener" class="project-link">View Project →</a>
@@ -210,8 +212,9 @@
             <i class="fas fa-folder-open project-icon"></i>
             <a href="https://github.com/Tridip-2004/Python_Chatbot" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
           </div>
+          <div class="project-num">02</div>
           <h3>Python Chatbot</h3>
-          <p>Real-time chatbot built with LangGraph and Streamlit.</p>
+          <p>Real-time chatbot built with LangGraph and Streamlit for intelligent conversations.</p>
           <a href="https://github.com/Tridip-2004/Python_Chatbot" target="_blank" rel="noopener" class="project-link">View Project →</a>
         </div>
 
@@ -220,7 +223,8 @@
             <i class="fas fa-folder-open project-icon"></i>
             <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
           </div>
-          <h3>Drug Classification Using DNA Sequence</h3>
+          <div class="project-num">03</div>
+          <h3>Drug Classification via DNA</h3>
           <p>Internship project at JISIASR — ML on biological sequence data with DNA embeddings.</p>
           <a href="https://github.com/Tridip-2004/Drug_Classification_Using_DNA_Sequence" target="_blank" rel="noopener" class="project-link">View Project →</a>
         </div>
@@ -230,23 +234,31 @@
             <i class="fas fa-folder-open project-icon"></i>
             <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
           </div>
+          <div class="project-num">04</div>
           <h3>Dog Breed Classifier</h3>
-          <p>Predicts a dog's breed across 157 classes — deployed on Render.</p>
+          <p>Predicts a dog's breed across 157 classes — deployed live on Render.</p>
           <a href="https://github.com/Tridip-2004/Dog-s_Breed_prediction_With_Render_Deployment-" target="_blank" rel="noopener" class="project-link">View Project →</a>
         </div>
 
-        <!-- Set 2 — exact duplicate for seamless infinite loop -->
-        </div><!-- /track -->
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-folder-open project-icon"></i>
+            <a href="https://github.com/Tridip-2004" target="_blank" rel="noopener" class="project-gh"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="project-num">05</div>
+          <h3>New Project</h3>
+          <p>Add your new project description here — what it does, the tech used, and the problem it solves.</p>
+          <a href="https://github.com/Tridip-2004" target="_blank" rel="noopener" class="project-link">View Project →</a>
+        </div>
 
-      <!-- Dot indicators -->
-      <div class="carousel-dots" id="carouselDots">
-        <div class="carousel-dot active"></div>
-        <div class="carousel-dot"></div>
-        <div class="carousel-dot"></div>
-        <div class="carousel-dot"></div>
-      </div>
-
+      </div><!-- /track -->
     </div><!-- /wrap -->
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-bar">
+      <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+
   </section>
 
   <!-- ── CONTACT ───────────────────────────────────────────── -->
@@ -349,51 +361,17 @@
   });
 
   /* ══════════════════════════════════════════════════════
-     CAROUSEL — dot tracking + CSS animation sync
+     PROJECTS SCROLL — progress bar update
      ══════════════════════════════════════════════════════ */
-  (function() {
-    const track = document.getElementById('projectsTrack');
-    const dots  = document.querySelectorAll('.carousel-dot');
-    if (!track || !dots.length) return;
+  (function () {
+    const wrap = document.querySelector('.projects-scroll-wrap');
+    const fill = document.getElementById('scrollProgressFill');
+    if (!wrap || !fill) return;
 
-    const CARD_COUNT = 4; // real cards (not duplicates)
-    let currentDot = 0;
-
-    // Update active dot every (animation duration / card count) seconds
-    // animation is 20s for full loop (8 cards × 2 sets)
-    const intervalMs = (20000 / CARD_COUNT); // ~5s per card
-
-    function updateDot() {
-      dots.forEach((d, i) => d.classList.toggle('active', i === currentDot));
-      currentDot = (currentDot + 1) % CARD_COUNT;
-    }
-
-    updateDot();
-    const dotTimer = setInterval(updateDot, intervalMs);
-
-    // Pause animation & dots when tab hidden
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        track.style.animationPlayState = 'paused';
-        clearInterval(dotTimer);
-      } else {
-        track.style.animationPlayState = 'running';
-      }
-    });
-
-    // Touch swipe support — pause/resume
-    let touchStartX = 0;
-    const wrap = document.getElementById('carouselWrap');
-
-    wrap.addEventListener('touchstart', e => {
-      touchStartX = e.touches[0].clientX;
-      track.style.animationPlayState = 'paused';
-    }, { passive: true });
-
-    wrap.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      // Resume after a short delay
-      setTimeout(() => { track.style.animationPlayState = 'running'; }, 800);
+    wrap.addEventListener('scroll', () => {
+      const max  = wrap.scrollWidth - wrap.clientWidth;
+      const pct  = max > 0 ? (wrap.scrollLeft / max) * 100 : 0;
+      fill.style.width = pct + '%';
     }, { passive: true });
   })();
   </script>
